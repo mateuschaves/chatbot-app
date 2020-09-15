@@ -6,7 +6,6 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import ConversationScreen from "~/screens/ConversationsScreen";
 import MessagesScreen from "~/screens/MessagesScreen";
 
 export default function App() {
@@ -15,8 +14,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Messages" component={MessagesScreen} />
-        <Stack.Screen name="Conversation" component={ConversationScreen} />
+        <Stack.Screen
+          name="Messages"
+          component={MessagesScreen}
+          options={{
+            title: "Assistente",
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
